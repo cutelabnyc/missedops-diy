@@ -22,7 +22,7 @@ You only need to solder one pin on each for now, to hold everything in place.
 ![](./img/DSC_0030_Cropped.jpg)
 ![](./img/DSC_0031_Cropped.jpg)
 
-Again, for now you only need to solder the inner pins.
+Again, for now you only need to solder the inner pins. Make sure the plastic of the sockets is flush with the PCB.
 
 ## 4. Put the seven 3-pin headers into the pin sockets
 
