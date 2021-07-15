@@ -101,15 +101,15 @@ You can use different color LEDs if you want, but the resistor values for each L
 
 ![](./img/DSC_0056_Cropped.jpg)
 
-You only need to use three nuts to secure the panel for now. The goal is to make sure the LEDs are flush with the panel.
+You only need to use three nuts to secure the panel for now. The goal is to make sure everything is held in place and lines up correctly.
 
-## 18. Hold the module panel-side down so the LEDs lie flush with the panel
+## 18. Hold the module panel-side down so the LEDs fall flush with the panel
 
 ![](./img/DSC_0057_Cropped.jpg)
 
 Lift the module up with the panel facing down, so that the LEDs are pulled flush to the panel. You may need to wiggle them around a bit.
 
-## 19. Position the module panel-side down and solder jacks and LEDs
+## 19. Position the module panel-side down, so the LEDs stay in place, and solder the jacks, switch, and LEDs
 
 ![](./img/DSC_0058_Cropped.jpg)
 
