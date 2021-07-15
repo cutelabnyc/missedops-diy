@@ -28,6 +28,8 @@ Again, for now you only need to solder the inner pins. Make sure the plastic of 
 
 ![](./img/DSC_0032_Cropped.jpg)
 
+Make sure to insert the longer side of the header.
+
 ## 5. Align the top board and slide the corresponding pins through the board holes
 
 ![](./img/DSC_0035_Cropped.jpg)
