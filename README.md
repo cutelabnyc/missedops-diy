@@ -89,6 +89,7 @@ Because the two PJ-301 jacks are so close together, they share a pad. Fitting pi
 ![](./img/DSC_0050_Cropped.jpg)
 
 ## 15. Insert all of the LEDs, **but do not solder them yet** (D2-D11)
+**Be careful of LED orientation!** Make sure the square socket matches up with the flat side of the LED
 
 ## 16. Insert the toggle switch, **but do not solder them yet** (SW2)
 
