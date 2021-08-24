@@ -120,5 +120,7 @@ Lift the module up with the panel facing down, so that the LEDs are pulled flush
 
 ## Snap the board together and screw on the remaining washers and nuts
 
+Don't forget to add a jumper to the pins on the back of the module, as in the last picture, if you want to enable the random gate generator.
+
 ![](./img/DSC_0062_Cropped.jpg)
 ![](./img/DSC_0063_Cropped.jpg)
