@@ -2,6 +2,28 @@
 
 Hi and thanks for buying the Missed Ops DIY kit. Here's how you build it.
 
+## Contents
+
+Your kit should contain:
+
+- 10 3-pin headers
+- 7 3-pin sockets
+- 8 PJ398 jacks
+- 2 PJ301 jacks
+- 1 switch
+- 1 toggle
+- 10 nuts
+- 1 PCB layer 1
+- 1 PCB layer 2
+- 1 Missed Ops aluminum face panel
+- 4 blue LEDs
+- 4 green LEDs
+- 2 yellow LEDs
+- 1 10-pin header
+- 1 jumper (blue or green, but probably blue)
+- 1 potentiometer
+- 1 ribbon cable
+
 ## Building
 
 ### 1. Get the base board and the pin sockets
