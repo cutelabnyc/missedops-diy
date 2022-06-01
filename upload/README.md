@@ -22,3 +22,7 @@ cd missedops-diy/upload/168pa
 ```
 
 This should take care of everything else. You'll need a hardware programmer--we recommend using the [AVR Pocket Programmer](https://www.sparkfun.com/products/9825) from SparkFun. You'll also need the `avrdude` command line program.
+
+If you are using the AVR Pocket Programmer, you'll connect the ribbon cable to the J24 jumpers on the back PCB. Be sure to connect them with the red stripe towards the center of the board, as pictured.
+
+![](../img/IMG_2572.jpeg)
