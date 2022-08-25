@@ -2,15 +2,17 @@
 
 Your Missed Ops circuit boards should come pre-programmed. However, if for some reason you need to re-program them, or if for some reason we forgot to program it, then you can use the .hex files in this directory to program your board. 
 
-The easiest way to do this is with the `upload.sh` scripts in each directory. It's important to use these scripts since they also include the correct fuse settings for each of the three atmega chips used in the different hardware revisions of Missed Ops. In order to figure out which chip you have, pull off the bottom PCB and look for a square chip on the inside-top. Look closely (you may need a magnifying glass) and you should be able to read the chip name, which will include either `168pa`, `328p` or `329pb`. 
+The easiest way to do this is with the `upload.sh` scripts in each directory. It's important to use these scripts since they also include the correct fuse settings for each of the three Atmega chips used in the different hardware revisions of Missed Opportunities. In order to figure out which chip you have, pull off the bottom PCB and look for a square chip on the inside-top. Look closely (you may need a magnifying glass) and you should be able to read the chip name, which will include either `168PA`, `328P` or `328PB`. On later hardware revisions, we also indicate the name of the chip in white text on the PCB too, but you may still want to check the chip itself to confirm.
 
 ![](../img/IMG_2571.jpeg)
 
+Note that the chip name is often followed by an extra set of letters, but separated by a dash. For example, an 328P may be labeled 328P-AU. This chip is not a 328PA. Instead, the "AU" just indicates the shape of the chip (specifically the chip's package and pinout). So you should ignore any letters after the dash.
+
 We tried to color-code the jumpers as well to make it a bit easier.
 
-- *white* - 328p
-- *green* - 328pb
-- *blue* - 168pa
+- *white* - 328P
+- *green* - 328PB
+- *blue* - 168PA
 
 However, it's worth looking closely at the chip to double-check. If you try to run the wrong upload script it won't hurt your chip, but if it's not working this is the first thing to check.
 
