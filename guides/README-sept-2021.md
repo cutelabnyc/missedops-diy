@@ -207,4 +207,4 @@ And now you're done :)
 
 ## Programming
 
-Your Missed Ops circuit boards should come pre-programmed. However, if for some reason you need to re-program them, you can use the .hex file in the `upload` directory to flash the Missed Ops program to the board. Be sure to run the `upload.sh` script, which includes the correct settings for the fuses on the atmega chip. We recommend using the [AVR Pocket Programmer](https://www.sparkfun.com/products/9825) from SparkFun. You'll also need the `avrdude` command line program.
+Your Missed Ops circuit boards should come pre-programmed. However, if for some reason you need to re-program them, you can use the .hex file in the `upload` directory to flash the Missed Ops program to the board. We recommend using the [AVR Pocket Programmer](https://www.sparkfun.com/products/9825) from SparkFun. If you're using this programmer, you can run the `upload.sh` script, which includes the correct settings for the fuses on the atmega chip. You'll also need the `avrdude` command line program. Check the [README.md](../upload/README.md) in `upload` for more details.
