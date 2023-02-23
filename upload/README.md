@@ -31,7 +31,7 @@ If you are using the AVR Pocket Programmer, you'll connect the ribbon cable to t
 
 If you prefer to use a different programmer, you don't have to use the AVR Pocket Programmer. However, you'll need to be careful to run the correct command line program. If you've never used the command line before, you might want to familiarize yourself with the basics. You should at least know how to change the current directory, and how to print the current working directory. Mozilla provides a good getting started guide https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line. Once you've got the basics, you're ready to program your Missed Ops.
 
-First, connect your Missed Opportunities to your computer. You can verify that your device is connected correctly by using the `avrdude` command with the proper flags for your programmer and for the particular chip on your Missed Opportunities (see above). For example, if you're programming with a [Pololu USB Programmer](https://www.pololu.com/product/3172), and your Missed Ops has a `328pb` chip, you can run the following command
+First, connect your Missed Opportunities to your computer. You can verify that your device is connected correctly by using the `avrdude` command with the proper flags. The flags depend on your programmer and the particular chip on your Missed Opportunities (see above). For example, if you're programming with a [Pololu USB Programmer](https://www.pololu.com/product/3172), and your Missed Ops has a `328pb` chip, you can run the following command
 
 ```sh
 avrdude -p m328pb -c avrispv2
@@ -65,36 +65,44 @@ avrdude: Expected signature for ATmega168P is 1E 94 0B
 avrdude done.  Thank you.
 ```
 
-Your device is connected correctly, but the chip on Missed Opportunities is different to the one you indicated with the `-p` flag. Note the device signature that `avrdude` indicates, as the fuse settings will be different depending on the chip.
+Your device is connected correctly, but the chip on Missed Opportunities is different to the one you indicated with the `-p` flag. Note the device signature that `avrdude` indicates, as the fuse settings will be different depending on the chip. If your result looks like this:
 
-Once you're confident that the device is connected correctly, you're ready to perform the upload. First, move to the proper directory for the chip on your Missed Ops. For example, if your Missed Ops uses the ATmega328pb chip, then from the repository root you could run:
+```sh
+avrdude: initialization failed, rc=-1
+         Double check connections and try again, or use -F to override
+         this check.
+
+
+avrdude done.  Thank you.
+```
+
+Then the programmer is not connected correctly. Make sure that the ribbon cable is not connected backwards, etc.
+
+Once you're confident that the device is connected correctly, you're ready to perform the upload. Start by moving to the repository root with the `cd` command (the exact command will depend on where you placed this folder). Then, move to the appropriate folder in the `upload` directory. The name of the folder depends on the chip in your module. For example, if your Missed Ops uses the ATmega328pb chip, then from the repository root you could run:
 
 ```sh
 cd upload/328pb
 ```
 
-Next, run the proper `avrdude` command to perform the upload. Be careful to use the correct upload command for your chip! Use the `avrdude` command as described above to verify that the chip on the Missed Ops is what you think it is. The value that you provide to the `-c` flag will depend on your programmer. The value for the `-p` flag depends on the chip on your Missed Ops. Finally, the specific values given for the fuses also depends on your chip. So, if you were using the [Pololu USB Programmer](https://www.pololu.com/product/3172), and you were programming a Missed Ops with an ATmega328pb, you would run the following:
+Next, run the proper `avrdude` command to perform the upload. *Be careful to use the correct upload command for your chip!* Use the `avrdude` command as described above to verify that the chip on the Missed Ops is what you think it is. The value that you provide to the `-c` flag will depend on your programmer. The value for the `-p` flag depends on the chip on your Missed Ops. Finally, the specific values given for the fuses also depends on your chip. So, if you were using the [Pololu USB Programmer](https://www.pololu.com/product/3172), and you were programming a Missed Ops with an ATmega328pb, you would run the following:
 
 ```sh
 avrdude -e -Ulfuse:w:0xff:m -Uhfuse:w:0xd9:m -Uefuse:w:0xf7:m -v -p atmega328pb -C ../avrdude.conf -c avrispv2 -D -U flash:w:firmware.hex:i
 ```
 
-Here's how to program each of the three chips (`168pa`, `328p` or `329pb`) used with different hardware revisions of Missed Ops. First, use the `cd` command to move to the proper directory containing the `firmware.hex` file for your chip. Next, run the `avrdude` command. These commands assume you're using a [Pololu USB Programmer](https://www.pololu.com/product/3172), but if you're using something different, just swap in the correct value for your programmer after the `-c` flag.
+Here's how to program each of the three chips (`168pa`, `328p` or `329pb`) used with different hardware revisions of Missed Ops. First, use the `cd` command to move to the proper directory containing the `firmware.hex` file for your chip (see above). Next, run the `avrdude` command listed below. *Careful to use the correct one, as the fuse values will be different depending on your chip!* These commands assume you're using a [Pololu USB Programmer](https://www.pololu.com/product/3172), but if you're using something different, just swap in the correct value for your programmer after the `-c` flag.
 
 ### 168pa
 ```sh
-cd upload/128pa
 avrdude -e -Ulfuse:w:0xff:m -Uhfuse:w:0xdd:m -Uefuse:w:0xf9:m -v -p atmega168p -C ../avrdude.conf -c avrispv2 -D -U flash:w:firmware.hex:i
 ```
 
 ### 328p 
 ```sh
-cd upload/328p
 avrdude -e -Ulfuse:w:0xff:m -Uhfuse:w:0xd9:m -Uefuse:w:0xff:m -v -p atmega328p -C ../avrdude.conf -c avrispv2 -D -U flash:w:firmware.hex:i
 ```
 
 ### 328pb
 ```sh
-cd upload/328pb
 avrdude -e -Ulfuse:w:0xff:m -Uhfuse:w:0xd9:m -Uefuse:w:0xf7:m -v -p atmega328pb -C ../avrdude.conf -c usbtiny -D -U flash:w:firmware.hex:i
 ```
