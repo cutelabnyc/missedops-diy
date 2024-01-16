@@ -2,6 +2,10 @@
 
 Hi and thanks for buying the Missed Ops DIY kit. This is the build guide for the September 2021 hardware revision. If you've got a push button switch in your kit, this is the version for you.
 
+You can test your module using this guide
+
+https://www.youtube.com/watch?v=rD7otNZT23U
+
 ## Contents
 
 ![](../img/sept-2021/IMG_2504.jpeg)
