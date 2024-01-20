@@ -38,7 +38,7 @@ The base board is the one with Missed Opportunities written on it.
 
 ![](../img/sept-2021/IMG_2505.jpeg)
 
-### 2. Start by soldering the two outer pin sockets (J18 and J22)
+### 2. Start by soldering the two outer pin sockets (J18 and J28)
 
 ![](../img/sept-2021/IMG_2506.jpeg)
 ![](../img/sept-2021/IMG_2507.jpeg)
@@ -49,7 +49,7 @@ You only need to solder one pin on each for now, to hold everything in place.
 
 ![](../img/sept-2021/IMG_2508.jpeg)
 
-### 3. Solder the four inner pin sockets (J19, J20, J21, J23)
+### 3. Solder the five inner pin sockets (J19, J20, J21, J22 and J23)
 
 ![](../img/sept-2021/IMG_2509.jpeg)
 ![](../img/sept-2021/IMG_2510.jpeg)
