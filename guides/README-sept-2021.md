@@ -2,35 +2,39 @@
 
 Hi and thanks for buying the Missed Ops DIY kit. This is the build guide for the September 2021 hardware revision. If you've got a push button switch in your kit, this is the version for you.
 
+You can test your module using this guide
+
+https://www.youtube.com/watch?v=rD7otNZT23U
+
 ## Contents
 
 ![](../img/sept-2021/IMG_2504.jpeg)
 
 Your kit should contain:
 
-- 10 3-pin headers
-- 7 3-pin sockets
-- 8 PJ398 jacks
-- 2 PJ301 jacks
-- 1 switch
-- 1 toggle
-- 10 nuts
-- 1 PCB layer 1
-- 1 PCB layer 2
-- 1 Missed Ops aluminum face panel
-- 4 blue LEDs
-- 4 green LEDs
-- 2 yellow LEDs
-- 1 10-pin header
-- 1 jumper (blue or green, but probably blue)
-- 1 potentiometer
-- 1 ribbon cable
+- 10x 3-pin headers
+- 7x 3-pin sockets
+- 8x PJ398 jacks
+- 2x PJ301 jacks
+- 10x nuts
+- 1x tact/pushbotton switch
+- 1x toggle switch spdt
+- 1x PCB layer 1
+- 1x PCB layer 2
+- 1x Missed Ops aluminum face panel
+- 4x blue LEDs
+- 4x green LEDs
+- 2x yellow LEDs
+- 1x 10-pin header
+- 1x jumper (blue or green, but probably blue)
+- 1x 100k trimmer potentiometer
+- 1x ribbon cable
 
 ## Building
 
 ### 1. Get the base board and the pin sockets
 
-The base board is the one with Missed Opportunities written on it.
+The base board is the one with Missed Opportunities written in large letters on the back. It contains the power supply and microcontroller that drive the rest of the module.
 
 ![](../img/sept-2021/IMG_2505.jpeg)
 
@@ -51,7 +55,7 @@ You only need to solder one pin on each for now, to hold everything in place.
 ![](../img/sept-2021/IMG_2510.jpeg)
 ![](../img/sept-2021/IMG_2511.jpeg)
 
-Again, for now you only need to solder the inner pins. Make sure the plastic of the sockets is flush with the PCB.
+Again, for now you only need to solder one pin on each. Make sure the plastic of the sockets is flush with the PCB.
 
 ### 4. Put the seven 3-pin headers into the pin sockets
 
@@ -104,13 +108,15 @@ This is where the jumper belongs, so you can slide it on after soldering on the 
 ![](../img/sept-2021/IMG_2532.jpeg)
 ![](../img/sept-2021/IMG_2533.jpeg)
 
-### 12. Insert the PJ-398 (Thonkiconn) jacks into the top board, soldering only the middle pin on each (J1, J2, J3, J4, J5, J6, J7, J8)
+### 12. Insert the PJ-398 (Thonkiconn) jacks into the top board, soldering only the one pin on each (J1, J2, J3, J4, J5, J6, J7, J8)
 
 Start with the top jack, being careful to insert the ground pin into the right hole. You'll have to push it to the side slightly, as in the photo. We had to do it like this to keep the ground pin from shorting with the legs of the LED.
 
+We recommend soldering just the middle pin. This keeps the jack in place, while still leaving enough flexibility to easily add the panel. You can pick any of the three pins, but we strongly discourage soldering _all three_ until after you've added the pedal.
+
 ![](../img/sept-2021/IMG_1644.jpg)
 
-Now insert the remaining PJ-398 jacks, again soldering only the middle pin.
+Now insert the remaining PJ-398 jacks, again soldering only one pin.
 
 ![](../img/sept-2021/IMG_2537.jpeg)
 ![](../img/sept-2021/IMG_2538.jpeg)
@@ -144,12 +150,16 @@ Because the two PJ-301 jacks are so close together, they share a pad. Fitting pi
 ![](../img/sept-2021/IMG_2546.jpeg)
 
 ### 15. Insert all of the LEDs, **but do not solder them yet** (D2-D11)
-**Be careful of LED orientation!** Make sure the square socket matches up with the flat side of the LED. The color for each LED is written on the PCB.
+**Be careful of LED orientation!** LEDs have a polarity, and will not work if connected backwards. Luckily, they won't be damaged if you do, so you can reverse them if you make the mistake. But it's easy to damage the board or parts while fixing the mistake, so it's best to get it right from the start.
+
+Here's how to check the polarity: at the bottom of the plastic lens dome on each LED, there's a thin rim. This rim is missing/flat on of the four sides. Make sure that the flat part of the LED dome faces towards the square pad/hole on the circuitboard. There are other ways to check LED polarity as well: the short lead (leg) indicates the negative side, which should be fitted in the square pad/hole; and you want to be really careful, you can look inside the lens dome and look at the angle of the tiny gap between the anvil and post. Technically the latter is the only way to confirm the polarity — we've come across LEDs with the lens put on backwards or the legs cut in reverse. But those are extremely rare, just a few out many thousands of (cheap) LEDs. So looking at the case should do the trick.
+
+The color for each LED is written on the PCB.
 
 ![](../img/sept-2021/IMG_2547.jpeg)
 ![](../img/sept-2021/IMG_2548.jpeg)
 
-You can use different color LEDs if you want, but the resistor values for each LED were chosen for the original colors.
+You can use different color LEDs if you want, but the resistor values for each LED were chosen for the original colors, so the brightness will vary.
 
 ### 16. Insert the toggle and push button switches.
 
@@ -207,4 +217,4 @@ And now you're done :)
 
 ## Programming
 
-Your Missed Ops circuit boards should come pre-programmed. However, if for some reason you need to re-program them, you can use the .hex file in the `upload` directory to flash the Missed Ops program to the board. Be sure to run the `upload.sh` script, which includes the correct settings for the fuses on the atmega chip. We recommend using the [AVR Pocket Programmer](https://www.sparkfun.com/products/9825) from SparkFun. You'll also need the `avrdude` command line program.
+Your Missed Ops circuit boards should come pre-programmed. However, if for some reason you need to re-program them, you can use the .hex file in the `upload` directory to flash the Missed Ops program to the board. We recommend using the [AVR Pocket Programmer](https://www.sparkfun.com/products/9825) from SparkFun. If you're using this programmer, you can run the `upload.sh` script, which includes the correct settings for the fuses on the atmega chip. You'll also need the `avrdude` command line program. Check the [README.md](../upload/README.md) in `upload` for more details.
