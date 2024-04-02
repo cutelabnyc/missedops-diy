@@ -128,7 +128,7 @@ Soldering only the middle pin keeps things flexible so you can make sure the jac
 
 ### 13. Take the PJ-301 jacks, and snip the excess metal jacket casing off the jacks
 
-You're not snipping off the legs, just the little bit of excess metal jacket casing, so that the jack will sit flush on the PCB. This is what they look like before you snip off the excess metal jacket casing. 
+You're not snipping off the legs, just the little bit of excess metal jacket casing, so that the jack will sit flush on the PCB. This is what they look like before you snip off the excess metal jacket casing.
 
 ![](../img/sept-2021/IMG_2542.jpeg)
 
@@ -152,14 +152,16 @@ Because the two PJ-301 jacks are so close together, they share a pad. Fitting pi
 ### 15. Insert all of the LEDs, **but do not solder them yet** (D2-D11)
 **Be careful of LED orientation!** LEDs have a polarity, and will not work if connected backwards. Luckily, they won't be damaged if you do, so you can reverse them if you make the mistake. But it's easy to damage the board or parts while fixing the mistake, so it's best to get it right from the start.
 
-Here's how to check the polarity: at the bottom of the plastic lens dome on each LED, there's a thin rim. This rim is missing/flat on of the four sides. Make sure that the flat part of the LED dome faces towards the square pad/hole on the circuitboard. There are other ways to check LED polarity as well: the short lead (leg) indicates the negative side, which should be fitted in the square pad/hole; and you want to be really careful, you can look inside the lens dome and look at the angle of the tiny gap between the anvil and post. Technically the latter is the only way to confirm the polarity — we've come across LEDs with the lens put on backwards or the legs cut in reverse. But those are extremely rare, just a few out many thousands of (cheap) LEDs. So looking at the case should do the trick.
+The cathode of the LED should be placed in the square hole on the PCB.
 
-The color for each LED is written on the PCB.
+LEDs have multiple polarity markings, which are show in our [LED Polarity Guide](img/led-polarity-diagram-20240328-2.png).
+
+Here's how to check the polarity: at the bottom of the plastic lens dome on each LED, there's a thin rim. This rim is missing/flat on one of the four sides. Make sure that the flat part of the LED dome faces towards the square pad/hole on the circuitboard. There are other ways to check LED polarity as well: the short lead (leg) indicates the negative side, which should be fitted in the square pad/hole; and you want to be really careful, you can look inside the lens dome and look at the angle of the tiny gap between the anvil and post. Technically the latter is the only way to confirm the polarity — we've come across LEDs with the lens put on backwards or the legs cut in reverse. But those are extremely rare, just a few out many thousands of (cheap) LEDs. So looking at the case should do the trick.
+
+The color for each LED is written on the PCB. You can use different color LEDs if you want, but the resistor values for each LED were chosen for the original colors, so the brightness will vary.
 
 ![](../img/sept-2021/IMG_2547.jpeg)
 ![](../img/sept-2021/IMG_2548.jpeg)
-
-You can use different color LEDs if you want, but the resistor values for each LED were chosen for the original colors, so the brightness will vary.
 
 ### 16. Insert the toggle and push button switches.
 
