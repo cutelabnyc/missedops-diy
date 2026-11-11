@@ -2,7 +2,7 @@
 
 Your Missed Ops circuit boards should come pre-programmed. However, if for some reason you need to re-program them, or if for some reason we forgot to program it, then you can use the .hex files in this directory to program your board. 
 
-If you're using the [AVR Pocket Programmer](https://www.sparkfun.com/products/9825) from SparkFun, then the easiest way to do this is with the `upload.sh` scripts in each directory (read on if you're using a different programmer). It's important to use these scripts since they also include the correct fuse settings for each of the three Atmega chips used in the different hardware revisions of Missed Ops. In order to figure out which chip you have, pull off the bottom PCB and look for a square chip on the inside-top. Look closely (you may need a magnifying glass) and you should be able to read the chip name, which will include either `168PA`, `328P` or `329PB`. On later hardware revisions, we also indicate the name of the chip in white text on the PCB too, but you may still want to check the chip itself to confirm.
+If you're using the [AVR Pocket Programmer](https://www.sparkfun.com/products/9825) from SparkFun, then the easiest way to do this is with the `upload.sh` scripts in each directory (read on if you're using a different programmer). It's important to use these scripts since they also include the correct fuse settings for each of the three Atmega chips used in the different hardware revisions of Missed Ops. In order to figure out which chip you have, pull off the bottom PCB and look for a square chip on the inside-top. Look closely (you may need a magnifying glass) and you should be able to read the chip name, which will include either `168PA`, `328P` or `328PB`. On later hardware revisions, we also indicate the name of the chip in white text on the PCB too, but you may still want to check the chip itself to confirm.
 
 ![](../img/IMG_2571.jpeg)
 
@@ -92,7 +92,7 @@ Next, run the proper `avrdude` command to perform the upload. *Be careful to use
 avrdude -e -Ulfuse:w:0xff:m -Uhfuse:w:0xd9:m -Uefuse:w:0xf7:m -v -p atmega328pb -C ../avrdude.conf -c avrispv2 -D -U flash:w:firmware.hex:i
 ```
 
-Here's how to program each of the three chips (`168pa`, `328p` or `329pb`) used with different hardware revisions of Missed Ops. First, use the `cd` command to move to the proper directory containing the `firmware.hex` file for your chip (see above). Next, run the `avrdude` command listed below. *Careful to use the correct one, as the fuse values will be different depending on your chip!* These commands assume you're using a [Pololu USB Programmer](https://www.pololu.com/product/3172), but if you're using something different, just swap in the correct value for your programmer after the `-c` flag.
+Here's how to program each of the three chips (`168pa`, `328p` or `atmega328pb`) used with different hardware revisions of Missed Ops. First, use the `cd` command to move to the proper directory containing the `firmware.hex` file for your chip (see above). Next, run the `avrdude` command listed below. *Careful to use the correct one, as the fuse values will be different depending on your chip!* These commands assume you're using a [Pololu USB Programmer](https://www.pololu.com/product/3172), but if you're using something different, just swap in the correct value for your programmer after the `-c` flag.
 
 ### 168pa
 ```sh
